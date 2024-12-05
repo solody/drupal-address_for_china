@@ -1,0 +1,7 @@
+address_for_china.example:
+  path: '/address-for-china/example'
+  defaults:
+    _title: 'Example'
+    _form: 'Drupal\address_for_china\Form\ExampleForm'
+  requirements:
+    _permission: 'access content'

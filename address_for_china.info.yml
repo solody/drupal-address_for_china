@@ -1,0 +1,7 @@
+name: 'Address for china'
+type: module
+description: 'Provide a field type to hold address info of china.'
+package: Commerce
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:field

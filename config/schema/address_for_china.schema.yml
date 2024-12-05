@@ -1,0 +1,39 @@
+field.storage_settings.address_for_china:
+  type: mapping
+  label: Address for china storage settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+field.field_settings.address_for_china:
+  type: mapping
+  label: Address for china field settings
+  mapping:
+    bar:
+      type: string
+      label: Bar
+
+field.value.address_for_china:
+  type: mapping
+  label: Default value
+  mapping:
+    value:
+      type: label
+      label: Value
+
+field.widget.settings.address_for_china_default:
+  type: mapping
+  label: Address for china default widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+field.formatter.settings.address_for_china_default:
+  type: mapping
+  label: Address for china default formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
