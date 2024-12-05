@@ -71,6 +71,8 @@ final class AddressForChina extends RenderElementBase {
       '#address_details' => NULL,
       '#name' => NULL,
       '#phone' => NULL,
+      '#enable_address_details' => TRUE,
+      '#enable_receiver' => TRUE,
     ];
   }
 
@@ -154,21 +156,27 @@ final class AddressForChina extends RenderElementBase {
       ] + $district_options,
       '#default_value' => $element['#district_code'],
     ];
-    $element['address_details'] = [
-      '#type' => 'textfield',
-      '#title' => t('Address details'),
-      '#default_value' => $element['#address_details'],
-    ];
-    $element['name'] = [
-      '#type' => 'textfield',
-      '#title' => t('Name'),
-      '#default_value' => $element['#name'],
-    ];
-    $element['phone'] = [
-      '#type' => 'textfield',
-      '#title' => t('Phone'),
-      '#default_value' => $element['#phone'],
-    ];
+    if ($element['#enable_address_details']) {
+      $element['address_details'] = [
+        '#type' => 'textfield',
+        '#title' => t('Address details'),
+        '#default_value' => $element['#address_details'],
+      ];
+    }
+
+    if ($element['#enable_receiver']) {
+      $element['name'] = [
+        '#type' => 'textfield',
+        '#title' => t('Name'),
+        '#default_value' => $element['#name'],
+      ];
+      $element['phone'] = [
+        '#type' => 'textfield',
+        '#title' => t('Phone'),
+        '#default_value' => $element['#phone'],
+      ];
+    }
+
     return $element;
   }
 

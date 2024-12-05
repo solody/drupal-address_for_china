@@ -2,9 +2,12 @@ field.storage_settings.address_for_china:
   type: mapping
   label: Address for china storage settings
   mapping:
-    foo:
-      type: string
-      label: Foo
+    enable_address_details:
+      type: boolean
+      label: Enable address details
+    enable_receiver:
+      type: boolean
+      label: Enable receiver
 
 field.field_settings.address_for_china:
   type: mapping
@@ -18,9 +21,24 @@ field.value.address_for_china:
   type: mapping
   label: Default value
   mapping:
-    value:
-      type: label
-      label: Value
+    province_code:
+      type: string
+      label: Province code
+    city_code:
+      type: string
+      label: City code
+    district_code:
+      type: string
+      label: District code
+    address_details:
+      type: string
+      label: Address details
+    name:
+      type: string
+      label: Name
+    phone:
+      type: string
+      label: Phone
 
 field.widget.settings.address_for_china_default:
   type: mapping

@@ -29,7 +29,10 @@ final class AddressForChinaItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function defaultStorageSettings(): array {
-    $settings = ['foo' => ''];
+    $settings = [
+      'enable_address_details' => TRUE,
+      'enable_receiver' => TRUE,
+    ];
     return $settings + parent::defaultStorageSettings();
   }
 
@@ -37,10 +40,16 @@ final class AddressForChinaItem extends FieldItemBase {
    * {@inheritdoc}
    */
   public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data): array {
-    $element['foo'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Foo'),
-      '#default_value' => $this->getSetting('foo'),
+    $element['enable_address_details'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Enable address details'),
+      '#default_value' => $this->getSetting('enable_address_details'),
+      '#disabled' => $has_data,
+    ];
+    $element['enable_receiver'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Enable receiver'),
+      '#default_value' => $this->getSetting('enable_receiver'),
       '#disabled' => $has_data,
     ];
     return $element;
@@ -184,6 +193,9 @@ final class AddressForChinaItem extends FieldItemBase {
     $values['province_code'] = $random->word(mt_rand(1, 50));
     $values['city_code'] = $random->word(mt_rand(1, 50));
     $values['district_code'] = $random->word(mt_rand(1, 50));
+    $values['address_details'] = $random->word(mt_rand(1, 50));
+    $values['name'] = $random->word(mt_rand(1, 50));
+    $values['phone'] = $random->word(mt_rand(1, 50));
     return $values;
   }
 

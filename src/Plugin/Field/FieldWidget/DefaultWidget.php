@@ -79,6 +79,7 @@ final class DefaultWidget extends WidgetBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
+    $storage_settings = $this->fieldDefinition->getFieldStorageDefinition()->getSettings();
     return [
       '#type' => 'address_for_china',
       '#province_code' => $items[$delta]->province_code ?? NULL,
@@ -87,6 +88,8 @@ final class DefaultWidget extends WidgetBase implements ContainerFactoryPluginIn
       '#address_details' => $items[$delta]->address_details ?? NULL,
       '#name' => $items[$delta]->name ?? NULL,
       '#phone' => $items[$delta]->phone ?? NULL,
+      '#enable_address_details' => $storage_settings['enable_address_details'],
+      '#enable_receiver' => $storage_settings['enable_receiver'],
     ] + $element;
   }
 
