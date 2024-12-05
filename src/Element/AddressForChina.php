@@ -51,6 +51,7 @@ final class AddressForChina extends RenderElementBase {
       // If the element is supposed to return a large piece of markup consider
       // defining a theme function for it.
       '#tree' => TRUE,
+      '#theme_wrappers' => ['fieldset'],
       '#process' => [
         [self::class, 'processElement'],
       ],
