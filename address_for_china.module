@@ -4,3 +4,14 @@
  * @file
  * Primary module hooks for Address for china module.
  */
+/**
+ * Implements hook_locale_translation_projects_alter()
+ * to alter correct the translation file path.
+ *
+ * @param $projects
+ *
+ * @return void
+ */
+function address_for_china_locale_translation_projects_alter(&$projects) {
+  $projects['address_for_china']['info']['interface translation server pattern'] = __DIR__ . '/' . $projects['address_for_china']['info']['interface translation server pattern'];
+}

@@ -5,3 +5,5 @@ package: Commerce
 core_version_requirement: ^10 || ^11
 dependencies:
   - drupal:field
+'interface translation project': address_for_china
+'interface translation server pattern': translations/%project.%language.po
